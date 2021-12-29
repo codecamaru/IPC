@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="poiupv.InicioController">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autenticación">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nick Name" />
+      <TextField fx:id="nickName" />
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
+      <PasswordField fx:id="password" />
+      <HBox prefHeight="55.0" prefWidth="363.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="¿Aún no estás registrado?" />
+            <Button mnemonicParsing="false" onAction="#pulsadoRegistrar" text="Regístrate" />
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#iniciarSesion" text="Entrar" />
+      <Text fx:id="excepcionesInicio" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</VBox>
