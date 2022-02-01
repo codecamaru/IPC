@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<HBox minHeight="0.0" minWidth="0.0" prefHeight="364.0" prefWidth="599.0" spacing="5.0" stylesheets="@../estilos/fxml_mapa2.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.MapaController">
+   <children>
+      <VBox prefHeight="303.0" prefWidth="54.0" spacing="2.0">
+         <children>
+            <ToggleButton fx:id="dibujaPunto" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Dibuja punto" />
+               </tooltip>
+               <toggleGroup>
+                  <ToggleGroup fx:id="dibujar" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="dibujaLinea" mnemonicParsing="false" styleClass="Toggle-button" toggleGroup="$dibujar">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Dibujar linea" />
+               </tooltip>
+            </ToggleButton>
+            <ToggleButton fx:id="dibujarArco" mnemonicParsing="false" styleClass="Toggle-button" toggleGroup="$dibujar">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Dibujar arco" />
+               </tooltip>
+            </ToggleButton>
+            <ToggleButton fx:id="poneTexto" mnemonicParsing="false" styleClass="Toggle-button" toggleGroup="$dibujar">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Poner texto" />
+               </tooltip>
+            </ToggleButton>
+            <ColorPicker fx:id="colorPicker" editable="true" prefHeight="25.0" prefWidth="62.0">
+               <value>
+                  <Color />
+               </value>
+            </ColorPicker>
+            <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="0.0" prefWidth="54.0" VBox.vgrow="ALWAYS" />
+            <ToggleButton fx:id="activaTransportador" mnemonicParsing="false" text="Transportador">
+               <toggleGroup>
+                  <ToggleGroup fx:id="activarReglas" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton fx:id="activaEjes" mnemonicParsing="false" text="Lineas Ejes" toggleGroup="$activarReglas" />
+            <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#eliminarTodo">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Eliminar" />
+               </tooltip>
+            </Button>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+      <SplitPane dividerPositions="0.5" minHeight="0.0" minWidth="0.0" HBox.hgrow="ALWAYS">
+        <items>
+          <AnchorPane maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefWidth="98.0">
+               <children>
+                  <VBox prefHeight="313.0" prefWidth="108.0" spacing="5.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Forma punto" />
+                        <RadioButton fx:id="formaCirculo" mnemonicParsing="false" prefWidth="98.0" selected="true" styleClass="Radio-button" text="Círculo">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="formaPunto" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="formaCudrada" mnemonicParsing="false" prefWidth="98.0" styleClass="Radio-button" text="Cuadrado" toggleGroup="$formaPunto" />
+                        <RadioButton fx:id="formaTriangular" mnemonicParsing="false" prefWidth="98.0" styleClass="Radio-button" text="Triángulo" toggleGroup="$formaPunto" />
+                        <Separator prefWidth="98.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grosor linea" />
+                        <Line fx:id="lineaGrosorLinea" endX="-28.414215087890625" endY="-0.41421353816986084" startX="-100.0" strokeWidth="2.0" />
+                        <Slider fx:id="grosorLinea" blockIncrement="1.0" majorTickUnit="2.0" max="8.0" maxWidth="-Infinity" prefWidth="80.0" showTickLabels="true" value="2.0" />
+                        <Separator prefWidth="98.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grosor arco" />
+                        <Line fx:id="lineaGrosorArco" endX="-28.414215087890625" endY="-0.41421353816986084" startX="-100.0" strokeWidth="2.0" />
+                        <Slider fx:id="grosorArco" blockIncrement="1.0" majorTickUnit="2.0" max="8.0" maxWidth="-Infinity" prefWidth="80.0" showTickLabels="true" value="2.0" />
+                        <Separator prefWidth="98.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tamaño texto" />
+                        <ChoiceBox fx:id="tamañoTexto" prefHeight="25.0" prefWidth="66.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <StackPane alignment="TOP_LEFT" minHeight="0.0" minWidth="0.0">
+               <children>
+                  <ScrollPane fx:id="map_scrollPane" minHeight="0.0" minWidth="0.0" StackPane.alignment="TOP_LEFT">
+                    <content>
+                        <Pane fx:id="map_pane" minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT">
+                           <children>
+                              <ImageView fitHeight="1000.0" fitWidth="1000.0" layoutX="-8.0" onMouseDragged="#puntoFinal" onMousePressed="#puntoInicial" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../resources/M52039S0%20-%20Straight%20Of%20Gibraltar%20_100000_.jpeg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                    </content>
+                  </ScrollPane>
+                  <ImageView fx:id="reglaTransportador" fitHeight="100.0" fitWidth="100.0" focusTraversable="true" onMouseDragged="#moverReglas" onMousePressed="#pressReglas" opacity="0.68" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../resources/cc-139.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="MOVE" />
+                     </cursor>
+                  </ImageView>
+                  <Line fx:id="lineaVertical" endX="1500.0" fill="#ff00b1" onMouseDragged="#moverReglas" onMousePressed="#pressReglas" strokeWidth="2.0" visible="false" StackPane.alignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="MOVE" />
+                     </cursor>
+                  </Line>
+                  <Line fx:id="lineaHorizontal" endY="900.0" fill="#ff00b1" onMouseDragged="#moverReglas" onMousePressed="#pressReglas" strokeWidth="2.0" visible="false" StackPane.alignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="MOVE" />
+                     </cursor>
+                  </Line>
+               </children>
+            </StackPane>
+        </items>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </SplitPane>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="648.0" prefWidth="30.0" spacing="4.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Zoom" />
+            <Button minHeight="2.0" minWidth="2.0" mnemonicParsing="false" onAction="#zoomIn" prefHeight="25.0" prefWidth="25.0" text="+">
+               <tooltip>
+                  <Tooltip text="Aumentar" />
+               </tooltip></Button>
+            <Slider fx:id="zoomSlider" orientation="VERTICAL" styleClass="Slider" />
+            <Button minHeight="2.0" minWidth="2.0" mnemonicParsing="false" onAction="#zoomOut" prefHeight="25.0" prefWidth="25.0" text="-">
+               <tooltip>
+                  <Tooltip text="Disminuir" />
+               </tooltip></Button>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</HBox>
