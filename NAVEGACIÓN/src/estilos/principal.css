@@ -1,0 +1,54 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15 ene. 2022, 12:51:24
+    Author     : carolinaalbamaruganrubio
+*/
+.inicio{
+    -fx-background-color:burlywood;
+    -fx-font-family:sans-serif;
+    -fx-text-fill:#ffffff;
+}
+.cerrar{
+    -fx-background-color:burlywood;
+    -fx-font-family:sans-serif;
+    -fx-text-fill:#ffffff;
+}
+.vereditar{
+    -fx-background-color:burlywood;
+    -fx-font-family:sans-serif;
+    -fx-text-fill:#ffffff;
+}
+.mapa{
+    -fx-background-color:lightcyan;
+}
+.mapa:hover{
+    -fx-border-color:#30343f;
+}
+.estadisticas{
+    -fx-background-color:lightcyan;
+}
+.estadisticas:hover{
+    -fx-border-color:#30343f;
+}
+.enunciado{
+    -fx-background-color:darkkhaki;
+}
+.enunciado:hover{
+    -fx-border-color:#30343f;
+}
+.usuario{
+    -fx-background-color:wheat;
+}
+.escoger{
+    -fx-background-color:lightcyan;
+}
+.escoger:hover{
+    -fx-border-color:#30343f;
+}
+.hbox{
+    -fx-background-color:lightyellow;
+}

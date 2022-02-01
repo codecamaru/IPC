@@ -1,0 +1,12 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.entrar {
+    -fx-background-color:burlywood;
+}
+.registrar{
+    -fx-background-color:#5bf900;
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+}

@@ -1,0 +1,28 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.button{
+-fx-font-family:Franklin Gothic Demi Cond;
+-fx-font-size:18px ;
+-fx-padding:0 0 1 0 ; 
+-fx-text-fill:#f59ca9 ;
+-fx-background-color:#F6FFFD;
+-fx-background-radius:8px ;
+-fx-border-color:green;
+-fx-border-radius:8px ;
+-fx-border-width: 2px;
+}
+.button:hover{ 
+-fx-cursor: hand;
+-fx-text-fill:#FFFFFF;
+-fx-background-color:green;
+-fx-background-radius:8px ;
+-fx-border-color:none;
+-fx-border-radius:8px ;
+-fx-border-width: 2px;
+}

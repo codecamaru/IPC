@@ -1,0 +1,80 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+.Slider .track {
+      -fx-background-color:
+          -fx-shadow-highlight-color,
+          linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+          linear-gradient(to bottom,
+            derive(-fx-control-inner-background, -9%),
+            derive(-fx-control-inner-background, 0%),
+            derive(-fx-control-inner-background, -5%),
+            derive(-fx-control-inner-background, -12%)
+          );
+    -fx-background-insets: 0 0 -1 0, 0, 1;
+    -fx-background-radius: 0.25em, 0.25em, 0.166667em; /* 3 3 2 */
+    -fx-padding: 0.25em; /* 3 */
+    
+   /*https://stackoverflow.com/questions/51343759/how-to-change-fill-color-of-slider-in-javafx;*/
+}
+
+.Toggle-button{
+-fx-padding:0 0 1 0 ; 
+-fx-text-fill:#f59ca9 ;
+-fx-background-color:#F6FFFD;
+
+-fx-border-color:#f59ca9;
+-fx-border-radius:8px ;
+-fx-border-width: 2px;
+}
+
+.Toggle-button:hover{ 
+-fx-cursor: hand;
+-fx-text-fill:#F6FFFD;
+-fx-background-color:#f59ca9;
+-fx-background-radius:8px ;
+-fx-border-color:none;
+-fx-border-radius:8px ;
+-fx-border-width: 2px;
+}
+
+.Togle-button:focus{
+    -fx-border-color:#30343f;
+}
+
+.button{
+-fx-padding:0 0 1 0 ; 
+-fx-text-fill:#f59ca9 ;
+-fx-background-color:#F6FFFD;
+-fx-border-color:#f59ca9;
+-fx-border-radius:8px ;
+-fx-border-width: 2px;
+}
+.button:hover{ 
+-fx-cursor: hand;
+-fx-text-fill:#F6FFFD;
+-fx-background-color:#f59ca9;
+-fx-background-radius:8px ;
+-fx-border-color:none;
+-fx-border-radius:8px ;
+-fx-border-width: 2px;
+}
+
+.Radio-button {
+    -fx-border-width: 1px;
+    -fx-border-color: -fx-darkest-grey-color;
+    -fx-background-color:white;
+    -fx-border-radius: 15px;
+    -fx-padding: 3px;
+}
+.Radio-button:selected {
+    -fx-background-color: #f59ca9;
+}
+.Radio-button:armed {
+    -fx-background-color: white;
+}
